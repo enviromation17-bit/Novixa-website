@@ -1,14 +1,37 @@
-:root {
-    --bg-dark: #0B0F19;
-    --bg-surface: #131A2C;
-    --border-color: rgba(255, 255, 255, 0.05);
-    
-    --text-main: #F3F4F6;
-    --text-muted: #9CA3AF;
-    
-    --accent-primary: #3B82F6;
-    --accent-glow: rgba(59, 130, 246, 0.15);
-    
-    --font-sans: system-ui, -apple-system, sans-serif;
-    --font-mono: monospace;
+/* ========================================
+   NOVIXA DESIGN SYSTEM
+======================================== */
+
+/* Colors */
+:root{
+
+    --bg-dark:#0B0F19;
+    --bg-secondary:#111827;
+    --bg-card:#1A2333;
+
+    --text-main:#F9FAFB;
+    --text-muted:#9CA3AF;
+
+    --accent-primary:#3B82F6;
+    --accent-hover:#2563EB;
+    --accent-glow:#60A5FA;
+
+    --success:#10B981;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --border-color:#243244;
+
+    /* Typography */
+
+    --font-sans:'Inter',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+
+    /* Border Radius */
+
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:16px;
+    --radius-pill:999px;
+
 }
