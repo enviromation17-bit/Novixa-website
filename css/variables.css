@@ -1,0 +1,14 @@
+:root {
+    --bg-dark: #0B0F19;
+    --bg-surface: #131A2C;
+    --border-color: rgba(255, 255, 255, 0.05);
+    
+    --text-main: #F3F4F6;
+    --text-muted: #9CA3AF;
+    
+    --accent-primary: #3B82F6;
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    
+    --font-sans: system-ui, -apple-system, sans-serif;
+    --font-mono: monospace;
+}
