@@ -131,22 +131,24 @@ a {
 
 .badge{
 
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
 
-    background:#10243d;
+    background:rgba(59,130,246,.12);
 
     color:var(--accent-primary);
 
-    padding:8px 18px;
+    border:1px solid rgba(59,130,246,.2);
 
-    border-radius:30px;
+    padding:10px 20px;
 
-    font-size:14px;
+    border-radius:999px;
 
-    margin-bottom:25px;
+    font-size:.9rem;
+
+    font-weight:500;
 
 }
-
 .hero-title{
 
     font-size:56px;
@@ -186,25 +188,41 @@ a {
 
 }
 
+/* ========================================
+   BUTTON COMPONENT
+======================================== */
+
 .btn{
 
-    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
     padding:14px 28px;
 
-    border-radius:8px;
+    border:none;
+
+    border-radius:var(--radius-sm);
+
+    font-family:var(--font-sans);
+
+    font-size:1rem;
 
     font-weight:600;
 
-    transition:0.3s;
+    cursor:pointer;
+
+    transition:all .3s ease;
 
 }
 
-.btn-primary{
+.btn-primary:hover{
 
-    background:var(--accent-primary);
+    background:var(--accent-hover);
 
-    color:var(--text-main);
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(59,130,246,.35);
 
 }
 
