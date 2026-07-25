@@ -1,5 +1,11 @@
 @import url('variables.css');
 
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 /* --- Reset & Global Defaults --- */
 * {
     margin: 0;
@@ -511,14 +517,448 @@ a {
 
 }
 /* ==========================================
-   ABOUT SECTION RESPONSIVE
+   SERVICES SECTION
 ========================================== */
 
-@media (max-width: 768px) {
+.services-section{
+    padding:100px 0;
+}
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+.service-card{
+
+    background:#0d1c30;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:16px;
+
+    padding:35px;
+
+    transition:0.3s ease;
+
+}
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#2da8ff;
+
+    box-shadow:0 15px 35px rgba(45,168,255,.15);
+
+}
+.service-icon{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.service-card h3{
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+    color:var(--text-main);
+
+}
+.service-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   FEATURED SOLUTIONS
+========================================== */
+
+.solutions-section{
+
+    padding:100px 0;
+
+}
+.solutions-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+.solution-card{
+
+    background:#0d1c30;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+}
+.solution-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2da8ff;
+
+    box-shadow:0 15px 35px rgba(45,168,255,.18);
+
+}
+.solution-image{
+
+    height:220px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        #142742,
+        #0b1424
+    );
+
+    color:#2da8ff;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+.solution-content{
+
+    padding:30px;
+
+}
+.solution-content h3{
+
+    font-size:26px;
+
+    margin-bottom:16px;
+
+}
+.solution-content p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+}
+.solutions-grid{
+
+    grid-template-columns:1fr;
+
+}
+/* ==========================================
+   TECHNOLOGY STACK
+========================================== */
+
+.tech-section{
+
+    padding:100px 0;
+
+}
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.tech-card{
+
+    background:#0d1c30;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    padding:35px;
+
+    transition:.3s ease;
+
+}
+
+.tech-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2da8ff;
+
+    box-shadow:0 15px 35px rgba(45,168,255,.15);
+
+}
+
+.tech-card h3{
+
+    color:#2da8ff;
+
+    margin-bottom:20px;
+
+}
+
+.tech-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.tech-card li{
+
+    padding:10px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    color:var(--text-muted);
+
+}
+
+.tech-card li:last-child{
+
+    border-bottom:none;
+
+}
+/* ==========================================
+   WHY CHOOSE NOVIXA
+========================================== */
+
+.why-section{
+
+    padding:100px 0;
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.why-card{
+
+    background:#0d1c30;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    padding:35px;
+
+    transition:.3s ease;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2da8ff;
+
+    box-shadow:0 15px 35px rgba(45,168,255,.15);
+
+}
+
+.why-card h3{
+
+    color:#2da8ff;
+
+    margin-bottom:18px;
+
+}
+
+.why-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+}
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+
+    background:#08111f;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:80px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    padding-bottom:60px;
+
+}
+
+.footer-brand h2{
+
+    color:#2da8ff;
+
+    margin-bottom:20px;
+
+}
+
+.footer-brand p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+}
+
+.footer-links h3,
+.footer-contact h3{
+
+    margin-bottom:20px;
+
+    color:var(--text-main);
+
+}
+
+.footer-links ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:var(--text-muted);
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#2da8ff;
+
+}
+
+.footer-contact p{
+
+    color:var(--text-muted);
+
+    margin-bottom:12px;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    padding:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:var(--text-muted);
+
+}
+@media (max-width:968px){
+
+    .hero-grid{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero-actions{
+
+        justify-content:center;
+
+    }
 
     .about-grid{
 
         grid-template-columns:1fr;
+
+    }
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .solutions-grid{
+
+        grid-template-columns:1fr;
+
+    }
+    .tech-grid{
+
+        grid-template-columns:1fr;
+
+    }
+    .why-grid{
+
+       grid-template-columns:1fr;
+
+    }
+    .footer-grid{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
 
     }
 
