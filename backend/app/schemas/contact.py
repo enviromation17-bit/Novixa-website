@@ -5,8 +5,10 @@ class ContactRequest(BaseModel):
 
     name: str
 
+    company: str
+
     email: EmailStr
 
-    company: str
+    project: str
 
     message: str
