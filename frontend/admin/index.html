@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Novixa Admin Dashboard</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Novixa Admin Dashboard</h1>
+
+<p>Client Leads</p>
+
+</header>
+
+<main>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Company</th>
+
+<th>Email</th>
+
+<th>Project</th>
+
+</tr>
+
+</thead>
+
+<tbody id="leadTable">
+
+</tbody>
+        <div class="stats">
+
+    <div class="card">
+
+        <h3>Total Leads</h3>
+
+        <h2 id="totalLeads">0</h2>
+
+    </div>
+
+    <div class="card">
+
+        <h3>AI Projects</h3>
+
+        <h2 id="aiProjects">0</h2>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Automation</h3>
+
+        <h2 id="automationProjects">0</h2>
+
+    </div>
+
+</div>
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name, company or email..."
+    >
+
+</div>
+</table>
+
+</main>
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

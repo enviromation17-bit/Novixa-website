@@ -963,3 +963,223 @@ a {
     }
 
 }
+/* ================================
+CONTACT SECTION
+================================ */
+
+
+.contact-section{
+
+padding:100px 0;
+
+}
+
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:50px;
+
+margin-top:60px;
+
+}
+
+
+
+.contact-info{
+
+background:#0d1c30;
+
+padding:40px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+.contact-info h3{
+
+font-size:28px;
+
+margin-bottom:25px;
+
+color:#2da8ff;
+
+}
+
+
+.contact-info p{
+
+color:#b8c2d1;
+
+margin-bottom:20px;
+
+font-size:17px;
+
+}
+
+
+
+
+.contact-form-card .btn-primary{
+
+background:#2da8ff;
+
+color:white;
+
+border:none;
+
+padding:16px;
+
+border-radius:10px;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+
+.contact-form-card .btn-primary:hover{
+
+background:#1688dd;
+
+}
+
+
+
+#contact-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea{
+
+
+background:#08111f;
+
+border:1px solid rgba(255,255,255,.1);
+
+padding:15px;
+
+border-radius:10px;
+
+color:white;
+
+font-size:16px;
+
+}
+
+
+
+#contact-form textarea{
+
+resize:none;
+
+}
+
+
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus{
+
+
+outline:none;
+
+border-color:#2da8ff;
+
+}
+
+
+
+
+
+
+@media(max-width:768px){
+
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+.legal-page{
+
+    padding:120px 10%;
+    min-height:100vh;
+
+}
+
+.legal-page h1{
+
+    font-size:3rem;
+    margin-bottom:30px;
+
+}
+
+.legal-page h2{
+
+    margin-top:35px;
+    margin-bottom:15px;
+
+}
+
+.legal-page p,
+.legal-page li{
+
+    line-height:1.8;
+    color:#cfcfcf;
+
+}
+
+.legal-page ul{
+
+    margin-left:20px;
+
+}
+.footer-links{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+.footer-links a{
+
+    color:#cccccc;
+
+    text-decoration:none;
+
+    transition:0.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#00d4ff;
+
+}
