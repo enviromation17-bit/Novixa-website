@@ -3,10 +3,42 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import engine, Base
 from app.models.contact import Contact
+from app.routes import auth
 
-from app.routes import services, contact
+from app.routes import  services, contact
+app = FastAPI(
 
-app = FastAPI()
+    title="Novixa API",
+
+    description="""
+Professional AI Engineering Platform
+
+Features:
+
+- Contact API
+- Client Lead Management
+- Admin Dashboard
+- Future AI Assistant
+- Future Automation APIs
+""",
+
+    version="1.0.0",
+
+    contact={
+
+        "name": "Novixa",
+
+        "email": "hello@novixa.com"
+
+    },
+
+    license_info={
+
+        "name": "MIT"
+
+    }
+
+)
 
 Base.metadata.create_all(bind=engine)
 
@@ -38,3 +70,24 @@ def home():
         "message": "Welcome to the Novixa API!"
 
     }
+@app.get("/health")
+def health():
+
+    return {
+
+        "status": "running",
+
+        "company": "Novixa",
+
+        "version": "1.0.0"
+
+    }
+app.include_router(
+
+    auth.router,
+
+    prefix="/api",
+
+    tags=["Authentication"]
+
+)

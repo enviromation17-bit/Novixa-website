@@ -4,11 +4,18 @@ from app.schemas.contact import ContactRequest
 from app.database import SessionLocal
 from app.models.contact import Contact
 from sqlalchemy.orm import Session
+from fastapi import HTTPException
 
 router = APIRouter()
 
 
-@router.post("/contact")
+
+@router.post(
+    "/contact",
+    summary="Create New Client Lead",
+    description="Stores a new client inquiry into the database.",
+    tags=["Client Leads"]
+)
 def submit_contact(data: ContactRequest):
 
     db = SessionLocal()
@@ -30,15 +37,42 @@ def submit_contact(data: ContactRequest):
         db.refresh(new_contact)
 
         return {
+
             "success": True,
+
             "message": f"Thank you {data.name}! We have received your project request.",
+
             "id": new_contact.id
+
         }
+
+    except Exception:
+
+        db.rollback()
+
+        raise HTTPException(
+
+            status_code=500,
+
+            detail="Unable to save contact request."
+
+        )
 
     finally:
 
         db.close()
-@router.get("/contacts")
+
+@router.get(
+
+    "/contacts",
+
+    summary="List All Client Leads",
+
+    description="Returns every client inquiry stored in the database.",
+
+    tags=["Client Leads"]
+
+)
 def get_contacts():
 
     db = SessionLocal()
