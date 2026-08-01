@@ -5,6 +5,8 @@ from app.database import SessionLocal
 from app.models.contact import Contact
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
+from fastapi import Depends
+from app.core.dependencies import verify_token
 
 router = APIRouter()
 
@@ -62,18 +64,10 @@ def submit_contact(data: ContactRequest):
 
         db.close()
 
-@router.get(
-
-    "/contacts",
-
-    summary="List All Client Leads",
-
-    description="Returns every client inquiry stored in the database.",
-
-    tags=["Client Leads"]
-
-)
-def get_contacts():
+@router.get("/contacts")
+def get_contacts(
+    user=Depends(verify_token)
+):
 
     db = SessionLocal()
 
