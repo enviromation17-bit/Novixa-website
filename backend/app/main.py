@@ -2,10 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import engine, Base
-from app.models.contact import Contact
-from app.routes import auth
+from app.routes.v1 import contact
+from app.routes.v1 import auth
+from app.core.exceptions import global_exception_handler
 
 from app.routes import  services, contact
+
 app = FastAPI(
 
     title="Novixa API",
@@ -39,7 +41,10 @@ Features:
     }
 
 )
-
+app.add_exception_handler(
+    Exception,
+    global_exception_handler
+)
 Base.metadata.create_all(bind=engine)
 
 # CORS middleware remains here
@@ -83,11 +88,16 @@ def health():
 
     }
 app.include_router(
-
     auth.router,
+    prefix="/api/v1"
+)
 
-    prefix="/api",
+app.include_router(
+    contact.router,
+    prefix="/api/v1"
+)
 
-    tags=["Authentication"]
-
+app.include_router(
+    services.router,
+    prefix="/api"
 )

@@ -5,11 +5,12 @@ from pwdlib import PasswordHash
 
 password_hash = PasswordHash.recommended()
 
-SECRET_KEY = "CHANGE_THIS_TO_A_LONG_SECRET_KEY_FOR_PRODUCTION"
+from app.core.config import (
+    SECRET_KEY,
+    ALGORITHM,
+    ACCESS_TOKEN_EXPIRE_MINUTES
+)
 
-ALGORITHM = "HS256"
-
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 
 def hash_password(password: str):

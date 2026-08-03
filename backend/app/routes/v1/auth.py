@@ -36,4 +36,3 @@ def login(data: LoginRequest):
         status_code=401,
         detail="Invalid Username or Password"
     )
-    
