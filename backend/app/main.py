@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 from app.database import engine, Base
 from app.routes.v1 import contact
 from app.routes.v1 import auth
 from app.core.exceptions import global_exception_handler
-
 from app.routes.v1 import  services
+from app.middleware.logging import LoggingMiddleware
 
 app = FastAPI(
 
@@ -41,6 +40,7 @@ Features:
     }
 
 )
+app.add_middleware(LoggingMiddleware)
 app.add_exception_handler(
     Exception,
     global_exception_handler

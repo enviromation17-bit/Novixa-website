@@ -465,3 +465,12 @@ Traceback (most recent call last):
 TypeError: hash must be str or bytes
 2026-08-03 11:08:32,327 | INFO | New contact received from Salman (salman@example.com)
 2026-08-03 11:09:37,823 | INFO | New contact received from Salman (salman@example.com)
+2026-08-03 12:10:08,851 | INFO | New contact received from salman (salman@example.com)
+2026-08-03 21:11:30,484 | INFO | New contact received from salmen (salman@example.com)
+2026-08-03 22:04:13,565 | INFO | GET / 200 0.0048s
+2026-08-03 22:04:19,737 | INFO | GET /docs 200 0.0016s
+2026-08-03 22:04:20,153 | INFO | GET /openapi.json 200 0.0629s
+2026-08-03 22:04:47,514 | INFO | GET /health 200 0.0024s
+2026-08-03 22:06:21,030 | INFO | POST /api/v1/login 401 0.0082s
+2026-08-03 22:07:33,669 | INFO | New contact received from salman (salman@example.com)
+2026-08-03 22:07:33,673 | INFO | POST /api/v1/contact 200 0.0483s

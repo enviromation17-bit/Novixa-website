@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from app.models.contact import Contact
 from app.schemas.contact import ContactRequest
 from app.core.logger import logger
+from app.repositories.contact_repository import save_contact
 
 
 def create_contact(
@@ -17,9 +18,10 @@ def create_contact(
         message=data.message
     )
 
-    db.add(new_contact)
-    db.commit()
-    db.refresh(new_contact)
+    new_contact = save_contact(
+        db,
+        new_contact
+    )
 
     logger.info(
         f"New contact received from {new_contact.name} ({new_contact.email})"
