@@ -10,6 +10,7 @@ from app.core.logger import logger
 from sqlalchemy.orm import Session
 from fastapi import Depends
 from app.dependencies import get_db
+from app.schemas.response import APIResponse
 
 router = APIRouter()
 
@@ -47,16 +48,13 @@ def submit_contact(
         f"New contact received from {new_contact.name} ({new_contact.email})"
         )
 
-        return {
-
-            "success": True,
-
-            "message": f"Thank you {data.name}! We have received your project request.",
-
-            "id": new_contact.id
-
-        }
-
+        return APIResponse(
+        success=True,
+        message=f"Thank you {data.name}! We have received your project request.",
+        data={
+                "id": new_contact.id
+            }
+)
     except Exception:
 
         db.rollback()

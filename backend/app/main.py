@@ -6,7 +6,7 @@ from app.routes.v1 import contact
 from app.routes.v1 import auth
 from app.core.exceptions import global_exception_handler
 
-from app.routes import  services, contact
+from app.routes.v1 import  services
 
 app = FastAPI(
 
@@ -63,9 +63,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(services.router, prefix="/api", tags=["Services"])
 
-app.include_router(contact.router,  prefix="/api" , tags=["Contact"])
 
 @app.get("/")
 def home():
@@ -99,5 +97,5 @@ app.include_router(
 
 app.include_router(
     services.router,
-    prefix="/api"
+    prefix="/api/v1"
 )
