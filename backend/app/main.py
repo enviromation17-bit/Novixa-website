@@ -6,6 +6,7 @@ from app.routes.v1 import auth
 from app.core.exceptions import global_exception_handler
 from app.routes.v1 import  services
 from app.middleware.logging import LoggingMiddleware
+from app.middleware.request_id import RequestIDMiddleware
 
 app = FastAPI(
 
@@ -40,6 +41,7 @@ Features:
     }
 
 )
+app.add_middleware(RequestIDMiddleware)
 app.add_middleware(LoggingMiddleware)
 app.add_exception_handler(
     Exception,
