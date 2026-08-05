@@ -12,7 +12,8 @@ from app.core.config import (
 
 @router.post(
     "/login",
-    summary="Admin Login",
+    summary="Administrator Login",
+    description="Authenticates an administrator and returns a JWT access token.",
     tags=["Authentication"]
 )
 def login(data: LoginRequest):
