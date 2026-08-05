@@ -7,6 +7,8 @@ from app.models.contact import Contact
 from app.dependencies import get_db
 from app.core.dependencies import verify_token
 from app.core.logger import logger
+from fastapi import Request
+from app.core.limiter import limiter
 
 
 router = APIRouter()
@@ -61,7 +63,9 @@ def get_contacts(
         }
     }
 )
+@limiter.limit("5/minute")
 def submit_contact(
+    request: Request,
     data: ContactRequest,
     db: Session = Depends(get_db)
 ):

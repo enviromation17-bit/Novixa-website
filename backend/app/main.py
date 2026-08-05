@@ -7,6 +7,9 @@ from app.core.exceptions import global_exception_handler
 from app.routes.v1 import  services
 from app.middleware.logging import LoggingMiddleware
 from app.middleware.request_id import RequestIDMiddleware
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
+from app.core.limiter import limiter
 
 app = FastAPI(
 
@@ -41,6 +44,8 @@ Features:
     }
 
 )
+app.state.limiter = limiter
+app.add_middleware(SlowAPIMiddleware)
 app.add_middleware(RequestIDMiddleware)
 app.add_middleware(LoggingMiddleware)
 app.add_exception_handler(
