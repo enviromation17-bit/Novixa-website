@@ -52,7 +52,7 @@ app.add_exception_handler(
     Exception,
     global_exception_handler
 )
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)
 
 # CORS middleware remains here
 # app.add_middleware(...)
