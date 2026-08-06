@@ -19,6 +19,9 @@ class Settings:
         self.ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
 
         self.ADMIN_PASSWORD_HASH = os.getenv("ADMIN_PASSWORD_HASH")
-
+        self.DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "sqlite:///novixa.db"
+)
 
 settings = Settings()
