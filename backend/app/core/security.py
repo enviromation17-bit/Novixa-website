@@ -2,16 +2,8 @@ from datetime import datetime, timedelta
 
 from jose import jwt
 from pwdlib import PasswordHash
-
+from app.core.config import settings
 password_hash = PasswordHash.recommended()
-
-from app.core.config import (
-    SECRET_KEY,
-    ALGORITHM,
-    ACCESS_TOKEN_EXPIRE_MINUTES
-)
-
-
 
 def hash_password(password: str):
     return password_hash.hash(password)
@@ -26,7 +18,7 @@ def create_access_token(data: dict):
     to_encode = data.copy()
 
     expire = datetime.utcnow() + timedelta(
-        minutes=ACCESS_TOKEN_EXPIRE_MINUTES
+        minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES
     )
 
     to_encode.update(
@@ -35,6 +27,6 @@ def create_access_token(data: dict):
 
     return jwt.encode(
         to_encode,
-        SECRET_KEY,
-        algorithm=ALGORITHM
+        settings.SECRET_KEY,
+        algorithm=settings.ALGORITHM
     )

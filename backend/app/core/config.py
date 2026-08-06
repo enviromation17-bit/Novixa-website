@@ -3,14 +3,22 @@ import os
 
 load_dotenv()
 
-SECRET_KEY = os.getenv("SECRET_KEY")
 
-ALGORITHM = os.getenv("ALGORITHM")
+class Settings:
 
-ACCESS_TOKEN_EXPIRE_MINUTES = int(
-    os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 60)
-)
+    def __init__(self):
 
-ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
+        self.SECRET_KEY = os.getenv("SECRET_KEY")
 
-ADMIN_PASSWORD_HASH = os.getenv("ADMIN_PASSWORD_HASH")
+        self.ALGORITHM = os.getenv("ALGORITHM", "HS256")
+
+        self.ACCESS_TOKEN_EXPIRE_MINUTES = int(
+            os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 60)
+        )
+
+        self.ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
+
+        self.ADMIN_PASSWORD_HASH = os.getenv("ADMIN_PASSWORD_HASH")
+
+
+settings = Settings()
