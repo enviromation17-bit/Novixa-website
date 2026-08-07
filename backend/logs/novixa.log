@@ -549,3 +549,4 @@ TypeError: hash must be str or bytes
 2026-08-07 16:08:18,111 | INFO | [ac3da2cd-2ab5-492a-abf7-30b1cdf73459] GET /health 200 0.0078s
 2026-08-07 16:20:20,755 | INFO | [fb3f4956-2a53-412b-82f6-ee399573397d] GET /health 200 0.0151s
 2026-08-07 16:20:52,885 | INFO | [ec57921e-072f-4286-b7c5-621207b0e530] GET /health 200 0.0131s
+2026-08-07 16:23:16,318 | INFO | [9b1bfe05-2c62-4ba2-be39-edfee2bba49d] POST /api/v1/login 401 0.0245s
