@@ -75,7 +75,8 @@ def submit_contact(
             company=data.company,
             email=data.email,
             project=data.project,
-            message=data.message
+            message=data.message,
+            status="new"
         )
         db.add(new_contact)
         db.commit()

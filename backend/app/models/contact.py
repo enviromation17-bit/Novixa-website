@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String
+from datetime import datetime
 
+from sqlalchemy import Column, Integer, String, DateTime
 from app.database import Base
 
 
@@ -17,3 +18,16 @@ class Contact(Base):
     project = Column(String)
 
     message = Column(String, nullable=False)
+
+    status = Column(
+        String,
+        nullable=False,
+        default="new",
+        index=True,
+    )
+
+    created_at = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+    )

@@ -15,7 +15,8 @@ def create_contact(
         company=data.company,
         email=data.email,
         project=data.project,
-        message=data.message
+        message=data.message,
+        status="new",
     )
 
     new_contact = save_contact(
