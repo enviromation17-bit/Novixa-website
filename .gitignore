@@ -1,0 +1,7 @@
+backend/.env
+backend/novixa.db
+backend/logs/
+**/__pycache__/
+*.pyc
+.venv/
+frontend/ts
