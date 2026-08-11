@@ -1,6 +1,13 @@
-let allContacts = [];
-async function loadContacts() {
+const token =
+    localStorage.getItem("novixa_access_token");
 
+if (!token) {
+    window.location.href = "../login.html";
+}
+
+let allContacts = [];
+
+async function loadContacts() {
 
     const table = document.getElementById("leadTable");
 
@@ -8,78 +15,105 @@ async function loadContacts() {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/api/v1/contacts");
+        const response = await fetch(
+            "http://127.0.0.1:8000/api/v1/contacts",
+        {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        } 
+);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
 
         allContacts = await response.json();
 
-        renderTable(allContacts);
+        updateStats();
+        filterContacts();
 
-        document.getElementById("totalLeads").textContent = allContacts.length;
+    } catch (error) {
 
-        const ai = allContacts.filter(
-            c => c.project.toLowerCase().includes("ai")
-        ).length;
+    console.error("Failed to load contacts:", error);
 
-        const automation = allContacts.filter(
-            c => c.project.toLowerCase().includes("automation")
-        ).length;
-
-        document.getElementById("aiProjects").textContent = ai;
-
-        document.getElementById("automationProjects").textContent = automation;
-
-    }
-
-    catch(error){
-
-        console.error(error);
+    table.innerHTML = `
+        <tr>
+            <td colspan="6">
+                Unable to load leads.
+                Please check your connection and try again.
+            </td>
+        </tr>
+        `;
 
     }
 
+} 
+
+
+
+function updateStats() {
+
+    document.getElementById("totalLeads").textContent =
+        allContacts.length;
+
+    const ai = allContacts.filter(contact =>
+        (contact.project || "")
+            .toLowerCase()
+            .includes("ai")
+    ).length;
+
+    const automation = allContacts.filter(contact =>
+        (contact.project || "")
+            .toLowerCase()
+            .includes("automation")
+    ).length;
+
+    document.getElementById("aiProjects").textContent = ai;
+
+    document.getElementById("automationProjects").textContent =
+        automation;
 }
 
-loadContacts();
-function renderTable(contacts){
 
-    const table = document.getElementById("leadTable");
+function applyFilters() {
 
-    table.innerHTML = "";
+    const keyword =
+        document.getElementById("searchInput").value
+        .toLowerCase()
+        .trim();
 
-    contacts.forEach(contact=>{
+    const selectedStatus =
+        document.getElementById("statusFilter").value
+        .toLowerCase();
 
-        table.innerHTML += `
+    const filtered = allContacts.filter(contact => {
 
-        <tr>
+        const name = (contact.name || "").toLowerCase();
+        const company = (contact.company || "").toLowerCase();
+        const email = (contact.email || "").toLowerCase();
+        const status = (contact.status || "").toLowerCase();
 
-            <td>${contact.name}</td>
+        const matchesSearch =
+            name.includes(keyword) ||
+            company.includes(keyword) ||
+            email.includes(keyword);
 
-            <td>${contact.company}</td>
+        const matchesStatus =
+            !selectedStatus ||
+            status === selectedStatus;
 
-            <td>${contact.email}</td>
-
-            <td>${contact.project}</td>
-
-        </tr>
-
-        `;
+        return matchesSearch && matchesStatus;
 
     });
 
-}
-document.getElementById("searchInput").addEventListener("input", function(){
-
-    const keyword = this.value.toLowerCase();
-
-    const filtered = allContacts.filter(contact =>
-
-        contact.name.toLowerCase().includes(keyword) ||
-
-        contact.company.toLowerCase().includes(keyword) ||
-
-        contact.email.toLowerCase().includes(keyword)
-
-    );
-
     renderTable(filtered);
+}
 
-});
+document
+    .getElementById("searchInput")
+    .addEventListener("input", applyFilters);
+
+document
+    .getElementById("statusFilter")
+    .addEventListener("change", applyFilters);

@@ -118,3 +118,65 @@ tr:hover{
     border-color:#38bdf8;
 
 }
+.filter-box {
+    margin: 15px 0;
+}
+
+.filter-box select {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.filter-box select:focus {
+    border-color: #38bdf8;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-new {
+    background: #1e3a8a;
+}
+
+.status-contacted {
+    background: #713f12;
+}
+
+.status-qualified {
+    background: #14532d;
+}
+
+.status-closed {
+    background: #374151;
+}
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.controls .search-box {
+    flex: 1;
+    margin: 0;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.filter-box {
+    margin: 0;
+}

@@ -3,12 +3,12 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Novixa Admin Dashboard</title>
+    <title>Novixa Admin Dashboard</title>
 
-<link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin.css">
 
 </head>
 
@@ -16,72 +16,97 @@
 
 <header>
 
-<h1>Novixa Admin Dashboard</h1>
+    <h1>Novixa Admin Dashboard</h1>
 
-<p>Client Leads</p>
+    <p>Client Leads</p>
 
 </header>
 
 <main>
 
-<table>
+    <section class="stats">
 
-<thead>
+        <div class="card">
 
-<tr>
+            <h3>Total Leads</h3>
 
-<th>Name</th>
+            <h2 id="totalLeads">0</h2>
 
-<th>Company</th>
+        </div>
 
-<th>Email</th>
+        <div class="card">
 
-<th>Project</th>
+            <h3>AI Projects</h3>
 
-</tr>
+            <h2 id="aiProjects">0</h2>
 
-</thead>
+        </div>
 
-<tbody id="leadTable">
+        <div class="card">
 
-</tbody>
-        <div class="stats">
+            <h3>Automation</h3>
 
-    <div class="card">
+            <h2 id="automationProjects">0</h2>
 
-        <h3>Total Leads</h3>
+        </div>
 
-        <h2 id="totalLeads">0</h2>
+    </section>
 
-    </div>
 
-    <div class="card">
+    <section class="controls">
 
-        <h3>AI Projects</h3>
+        <div class="search-box">
 
-        <h2 id="aiProjects">0</h2>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by name, company or email..."
+            >
 
-    </div>
+        </div>
 
-    <div class="card">
 
-        <h3>Automation</h3>
+        <div class="filter-box">
 
-        <h2 id="automationProjects">0</h2>
+            <select id="statusFilter">
 
-    </div>
+                <option value="">All Statuses</option>
+                <option value="new">New</option>
+                <option value="contacted">Contacted</option>
+                <option value="qualified">Qualified</option>
+                <option value="closed">Closed</option>
 
-</div>
-<div class="search-box">
+            </select>
 
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search by name, company or email..."
-    >
+        </div>
 
-</div>
-</table>
+    </section>
+
+
+    <section class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Project</th>
+                    <th>Status</th>
+                    <th>Created</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="leadTable"></tbody>
+
+        </table>
+
+    </section>
 
 </main>
 

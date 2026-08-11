@@ -1,4 +1,3 @@
-print("AUTH.PY LOADED")
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.auth import LoginRequest 
@@ -16,18 +15,6 @@ router = APIRouter()
     tags=["Authentication"]
 )
 def login(data: LoginRequest):
-
-    print("ENV USER:", settings.ADMIN_USERNAME)
-    print("INPUT USER:", data.username)
-    print("HASH:", settings.ADMIN_PASSWORD_HASH)
-
-    print(
-        "PASSWORD MATCH:",
-        verify_password(
-            data.password,
-            settings.ADMIN_PASSWORD_HASH
-        )
-    )
 
     if (
         data.username == settings.ADMIN_USERNAME
