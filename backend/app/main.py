@@ -10,6 +10,7 @@ from app.middleware.request_id import RequestIDMiddleware
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from app.core.limiter import limiter
+from app.routes.v1 import agents
 
 app = FastAPI(
 
@@ -104,5 +105,9 @@ app.include_router(
 
 app.include_router(
     services.router,
+    prefix="/api/v1"
+)
+app.include_router(
+    agents.router,
     prefix="/api/v1"
 )
