@@ -1,137 +1,41 @@
-/* =========================================
-   NOVIXA SCROLL REVEAL SYSTEM
-   ========================================= */
-console.log("Novixa animation.js loaded");
+/* ============================================================
+   NOVIXA — SCROLL REVEAL
+   Progressive enhancement. Never hides content if JS fails.
+   ============================================================ */
 
+(function () {
+    "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
+    const targets = document.querySelectorAll(".reveal");
+    if (!targets.length) return;
 
-    /*
-       Find the elements that should receive
-       scroll-reveal animations.
-    */
-
-    const revealElements = document.querySelectorAll(
-        ".section-heading, .about-card, .service-card, " +
-        ".solution-card, .tech-card, .why-card, " +
-        ".contact-info, .contact-form-card"
-    );
-
-
-    /*
-       If IntersectionObserver is not supported,
-       keep everything visible.
-
-       Animation is an enhancement.
-       It must never break the website.
-    */
-
+    /* If IntersectionObserver is unsupported, reveal everything. */
     if (!("IntersectionObserver" in window)) {
-
-        revealElements.forEach((element) => {
-
-            element.classList.add("is-visible");
-
-        });
-
+        targets.forEach((el) => el.classList.add("is-visible"));
         return;
     }
 
-
-    /*
-       Prepare animation classes.
-    */
-
-    revealElements.forEach((element, index) => {
-
-        /*
-           Section headings receive the larger
-           reveal movement.
-        */
-
-        if (element.classList.contains("section-heading")) {
-
-            element.classList.add("scroll-reveal");
-
-        } else {
-
-            /*
-               Cards and content blocks receive
-               the smaller card animation.
-            */
-
-            element.classList.add("scroll-reveal-card");
-
-
-            /*
-               Create a controlled stagger.
-
-               The delay cycles between four values.
-            */
-
-            const delayNumber = (index % 4) + 1;
-
-            element.classList.add(
-                `scroll-delay-${delayNumber}`
-            );
-        }
+    /* Add a subtle stagger to grouped cards sharing a parent. */
+    document.querySelectorAll(
+        ".solutions-grid, .tech-grid, .projects-grid, .about-grid, .process-track"
+    ).forEach((group) => {
+        const items = group.querySelectorAll(".reveal");
+        items.forEach((el, i) => {
+            el.classList.add("stagger-" + ((i % 4) + 1));
+        });
     });
-
-
-    /*
-       Observe elements entering and leaving
-       the viewport.
-    */
 
     const observer = new IntersectionObserver(
         (entries) => {
-
             entries.forEach((entry) => {
-
                 if (entry.isIntersecting) {
-
-                    /*
-                       Element has entered the viewport.
-                    */
-
                     entry.target.classList.add("is-visible");
-
-                } else {
-
-                    /*
-                       Element has left the viewport.
-
-                       Remove the class so the animation
-                       can happen again when the user
-                       returns to the section.
-                    */
-
-                    entry.target.classList.remove("is-visible");
-
+                    observer.unobserve(entry.target);
                 }
-
             });
-
         },
-        {
-            /*
-               Start the animation when roughly
-               15% of the element is visible.
-            */
-
-            threshold: 0.15
-        }
+        { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
     );
 
-
-    /*
-       Begin observing every animation target.
-    */
-
-    revealElements.forEach((element) => {
-
-        observer.observe(element);
-
-    });
-
-});
+    targets.forEach((el) => observer.observe(el));
+})();
