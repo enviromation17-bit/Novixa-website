@@ -1,137 +1,162 @@
-/* =========================================
-   NOVIXA SCROLL REVEAL SYSTEM
-   ========================================= */
-console.log("Novixa animation.js loaded");
+/* ============================================================
+   NOVIXA — SCROLL REVEAL
+   Enter viewport  → visible
+   Leave viewport  → hidden
+   Enter again     → visible again
 
+   Progressive enhancement:
+   JavaScript failure must never hide website content.
+   ============================================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
+    "use strict";
 
-    /*
-       Find the elements that should receive
-       scroll-reveal animations.
-    */
+    function initScrollReveal() {
 
-    const revealElements = document.querySelectorAll(
-        ".section-heading, .about-card, .service-card, " +
-        ".solution-card, .tech-card, .why-card, " +
-        ".contact-info, .contact-form-card"
-    );
+        const targets = document.querySelectorAll(".reveal");
 
-
-    /*
-       If IntersectionObserver is not supported,
-       keep everything visible.
-
-       Animation is an enhancement.
-       It must never break the website.
-    */
-
-    if (!("IntersectionObserver" in window)) {
-
-        revealElements.forEach((element) => {
-
-            element.classList.add("is-visible");
-
-        });
-
-        return;
-    }
-
-
-    /*
-       Prepare animation classes.
-    */
-
-    revealElements.forEach((element, index) => {
+        if (!targets.length) {
+            return;
+        }
+        document.documentElement.classList.add("reveal-ready");
 
         /*
-           Section headings receive the larger
-           reveal movement.
-        */
+         * If IntersectionObserver is unavailable,
+         * keep everything visible.
+         */
+        if (!("IntersectionObserver" in window)) {
 
-        if (element.classList.contains("section-heading")) {
+            targets.forEach((element) => {
+                element.classList.add("is-visible");
+            });
 
-            element.classList.add("scroll-reveal");
-
-        } else {
-
-            /*
-               Cards and content blocks receive
-               the smaller card animation.
-            */
-
-            element.classList.add("scroll-reveal-card");
-
-
-            /*
-               Create a controlled stagger.
-
-               The delay cycles between four values.
-            */
-
-            const delayNumber = (index % 4) + 1;
-
-            element.classList.add(
-                `scroll-delay-${delayNumber}`
-            );
+            return;
         }
-    });
 
+        /*
+         * Add stagger classes to groups of cards.
+         */
+        const groups = document.querySelectorAll(
+            ".services-grid, " +
+            ".solutions-grid, " +
+            ".projects-grid, " +
+            ".tech-grid, " +
+            ".about-grid, " +
+            ".why-grid, " +
+            ".process-track"
+        );
 
-    /*
-       Observe elements entering and leaving
-       the viewport.
-    */
+        groups.forEach((group) => {
 
-    const observer = new IntersectionObserver(
-        (entries) => {
+            const items = group.querySelectorAll(".reveal");
 
-            entries.forEach((entry) => {
+            items.forEach((element, index) => {
 
-                if (entry.isIntersecting) {
+                const delayNumber = (index % 4) + 1;
 
-                    /*
-                       Element has entered the viewport.
-                    */
-
-                    entry.target.classList.add("is-visible");
-
-                } else {
-
-                    /*
-                       Element has left the viewport.
-
-                       Remove the class so the animation
-                       can happen again when the user
-                       returns to the section.
-                    */
-
-                    entry.target.classList.remove("is-visible");
-
-                }
+                element.classList.add(
+                    "reveal-delay-" + delayNumber
+                );
 
             });
 
-        },
-        {
-            /*
-               Start the animation when roughly
-               15% of the element is visible.
-            */
+        });
 
-            threshold: 0.15
-        }
-    );
+        /*
+         * Observe elements whenever they enter
+         * and leave the viewport.
+         */
+        const observer = new IntersectionObserver(
+            (entries) => {
 
+                entries.forEach((entry) => {
 
-    /*
-       Begin observing every animation target.
-    */
+                    if (entry.isIntersecting) {
 
-    revealElements.forEach((element) => {
+                        /*
+                         * Element entered viewport.
+                         */
+                        entry.target.classList.add("is-visible");
 
-        observer.observe(element);
+                    } else {
+
+                        /*
+                         * Element left viewport.
+                         *
+                         * Removing the class means the
+                         * animation can happen again.
+                         */
+                        entry.target.classList.remove("is-visible");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.14,
+                rootMargin: "0px 0px -8% 0px"
+            }
+        );
+
+        targets.forEach((element) => {
+            observer.observe(element);
+        });
+    }
+
+    /* ============================================================
+       SUBTLE CURSOR LIGHT
+       ============================================================ */
+
+    let mouseX = 50;
+    let mouseY = 20;
+
+    let targetX = 50;
+    let targetY = 20;
+
+    window.addEventListener("pointermove", (event) => {
+
+        targetX = (event.clientX / window.innerWidth) * 100;
+        targetY = (event.clientY / window.innerHeight) * 100;
 
     });
 
-});
+
+    function animateAmbientLight() {
+
+        mouseX += (targetX - mouseX) * 0.08;
+        mouseY += (targetY - mouseY) * 0.08;
+
+        document.documentElement.style.setProperty(
+            "--mouse-x",
+            mouseX + "%"
+        );
+
+        document.documentElement.style.setProperty(
+            "--mouse-y",
+            mouseY + "%"
+        );
+
+        requestAnimationFrame(animateAmbientLight);
+    }
+
+    animateAmbientLight();
+
+
+    /*
+     * Wait until the document is ready.
+     */
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initScrollReveal
+        );
+
+    } else {
+
+        initScrollReveal();
+
+    }
+
+})();

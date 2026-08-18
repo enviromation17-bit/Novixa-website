@@ -2,762 +2,2957 @@
 <html lang="en">
 
 <head>
-    <!-- Character Encoding -->
     <meta charset="UTF-8">
-
-    <!-- Responsive Website -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Website Title -->
+    <meta name="theme-color" content="#070A11">
+
+    <meta
+        name="description"
+        content="Novixa engineers intelligent digital systems — AI engineering, automation, custom software, AI agents, data intelligence and knowledge systems that help organizations operate and scale."
+    >
+
     <title>Novixa | Engineering Intelligent Digital Systems</title>
 
-    <!-- Main CSS -->
+    <!-- ============================================================
+         FONTS
+         ============================================================ -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ============================================================
+         STYLES
+         ============================================================ -->
+
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="icon" href="favicon.ico">
 </head>
+
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <!-- ============================================================
+         ACCESSIBILITY
+         ============================================================ -->
 
-    <header class="navbar">
-
-    <div class="container">
-
-        <a href="index.html" class="logo">
-        Novixa
-        </a>
+    <a href="#main" class="skip-link">
+        Skip to content
+    </a>
 
 
-        <nav class="main-nav" aria-label="Main navigation">
+    <!-- ============================================================
+         HEADER / NAVIGATION
+         ============================================================ -->
 
-            <ul class="nav-links">
+    <header
+        class="site-header"
+        id="site-header"
+        data-nav
+    >
 
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <div class="container header-inner">
 
-            </ul>
+            <!-- Brand -->
 
-        </nav>
+            <a
+                href="#home"
+                class="brand"
+                aria-label="Novixa home"
+            >
+
+                <span
+                    class="brand-mark"
+                    aria-hidden="true"
+                >
+
+                    <svg
+                        viewBox="0 0 32 32"
+                        width="28"
+                        height="28"
+                        fill="none"
+                    >
+
+                        <path
+                            d="M6 24V8l10 8 10-8v16"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <circle
+                            cx="16"
+                            cy="16"
+                            r="2.4"
+                            fill="currentColor"
+                        />
+
+                    </svg>
+
+                </span>
+
+                <span class="brand-name">
+                    Novixa
+                </span>
+
+            </a>
 
 
-        <a href="#" class="nav-button">
-            Get Started
-        </a>
+            <!-- Desktop Navigation -->
 
-    </div>
+            <nav
+                class="primary-nav"
+                aria-label="Primary"
+            >
+
+                <ul>
+
+                    <li>
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#solutions">
+                            Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#technology">
+                            Technology
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+
+            <div class="header-actions">
+
+                <a
+                    href="#contact"
+                    class="btn btn-primary btn-sm"
+                >
+                    Start a Conversation
+                </a>
+
+
+                <button
+                    class="nav-toggle"
+                    id="nav-toggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-nav"
+                    type="button"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================================
+             MOBILE NAVIGATION
+             ======================================================== -->
+
+        <div
+            class="mobile-nav"
+            id="mobile-nav"
+            aria-hidden="true"
+        >
+
+            <nav aria-label="Mobile">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#solutions">
+                    Solutions
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#technology">
+                    Technology
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="#contact"
+                    class="btn btn-primary"
+                >
+                    Start a Conversation
+                </a>
+
+            </nav>
+
+        </div>
 
     </header>
-    <!-- =========================
-        MAIN HERO SECTION
-    ========================== -->
-    <main>
-        <section class="hero-section" id="home">
-            <div class="container hero-grid">
-                
-                <!-- Enterprise Value Proposition -->
-                <div class="hero-content">
-                    <div class="badge">Engineering Intelligent Digital Systems</div>
-                    <h1 class="hero-title">
-                    Build Smarter.
-                    <br>Scale Faster.
-                    <br>
-                    <span class="highlight">Engineering Intelligent Digital Systems. </span>
+
+
+
+    <!-- ============================================================
+         MAIN
+         ============================================================ -->
+
+    <main id="main">
+
+
+        <!-- ========================================================
+             HERO
+             ======================================================== -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div
+                class="hero-bg"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="container hero-inner">
+
+
+                <!-- HERO COPY -->
+
+                <div class="hero-copy reveal">
+
+                    <span class="eyebrow">
+
+                        <span
+                            class="eyebrow-dot"
+                            aria-hidden="true"
+                        ></span>
+
+                        Intelligent Digital Systems
+
+                    </span>
+
+
+                    <h1 class="hero-title text-balance">
+
+                        Engineering Intelligent<br>
+
+                        <span class="accent-text">
+                            Digital Systems.
+                        </span>
+
                     </h1>
-                    <p class="hero-subtitle">
-                    Novixa helps businesses automate repetitive tasks, improve productivity, and scale faster using modern AI and intelligent software solutions.</p>
-                    <div class="hero-actions">
-                        <a href="#solutions" class="btn btn-primary">Get Started</a>
-                        <a href="#about" class="btn btn-secondary">Learn More</a>
+
+
+                    <p class="hero-lead text-pretty">
+
+                        Novixa builds AI-powered software, automation,
+                        and intelligent infrastructure that help
+                        organizations operate with precision and scale
+                        with confidence — from first concept to production.
+
+                    </p>
+
+
+                    <div class="hero-cta">
+
+                        <a
+                            href="#contact"
+                            class="btn btn-primary"
+                        >
+                            Start a Conversation
+                        </a>
+
+
+                        <a
+                            href="#solutions"
+                            class="btn btn-ghost"
+                        >
+
+                            Explore Solutions
+
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M3 8h9m0 0-3.5-3.5M12 8l-3.5 3.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                            </svg>
+
+                        </a>
+
                     </div>
+
+
+                    <!-- HERO META -->
+
+                    <dl class="hero-meta">
+
+                        <div>
+
+                            <dt>
+                                Focus
+                            </dt>
+
+                            <dd>
+                                AI Engineering
+                            </dd>
+
+                        </div>
+
+
+                        <div>
+
+                            <dt>
+                                Approach
+                            </dt>
+
+                            <dd>
+                                Business-first
+                            </dd>
+
+                        </div>
+
+
+                        <div>
+
+                            <dt>
+                                Delivery
+                            </dt>
+
+                            <dd>
+                                Production-grade
+                            </dd>
+
+                        </div>
+
+                    </dl>
+
                 </div>
 
-                <!-- Proprietary Core Engine Asset Demo -->
-                <div class="hero-demo-card">
-                    <div class="card-header">
-                        <div class="window-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+
+
+                <!-- =================================================
+                     HERO SYSTEM PIPELINE
+                     ================================================= -->
+
+                <div
+                    class="hero-panel reveal"
+                    aria-label="Intelligent system pipeline visualization"
+                >
+
+                    <div class="panel-topbar">
+
+                        <div class="panel-title">
+
+                            <span class="live-dot"></span>
+
+                            System Pipeline
+
                         </div>
-                        <div class="window-title">Novixa AI Dashboard</div>
-                        <div class="status-indicator">
-                            <span class="pulse-dot"></span> System Online
-                        </div>
+
+                        <span class="panel-tag">
+                            live
+                        </span>
+
                     </div>
-                    <div class="card-body">
-                        <!-- High-converting production loop video/GIF container -->
-                        <div class="video-container">
-                            <div class="video-placeholder">
-                                <div class="terminal-header">NOVIXA AI SYSTEM INITIALIZING...</div>
-                                <code class="terminal-text">Connecting to AI Engine...</code>
-                                <code class="terminal-text success">Automation running successfully.</code>
+
+
+                    <div class="pipeline">
+
+
+                        <!-- INPUT -->
+
+                        <div
+                            class="pipeline-node"
+                            data-stage="1"
+                        >
+
+                            <div class="node-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                >
+
+                                    <path
+                                        d="M4 7h16M4 12h10M4 17h16"
+                                        stroke="currentColor"
+                                        stroke-width="1.6"
+                                        stroke-linecap="round"
+                                    />
+
+                                </svg>
+
                             </div>
+
+
+                            <div class="node-body">
+
+                                <span class="node-label">
+                                    Input
+                                </span>
+
+                                <span class="node-desc">
+                                    Business data & signals
+                                </span>
+
+                            </div>
+
+
+                            <span class="node-metric">
+                                ingest
+                            </span>
+
                         </div>
+
+
+                        <div
+                            class="pipeline-flow"
+                            aria-hidden="true"
+                        >
+                            <span></span>
+                        </div>
+
+
+                        <!-- INTELLIGENCE -->
+
+                        <div
+                            class="pipeline-node"
+                            data-stage="2"
+                        >
+
+                            <div class="node-icon accent">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                >
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="3.2"
+                                        stroke="currentColor"
+                                        stroke-width="1.6"
+                                    />
+
+                                    <path
+                                        d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"
+                                        stroke="currentColor"
+                                        stroke-width="1.6"
+                                        stroke-linecap="round"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <div class="node-body">
+
+                                <span class="node-label">
+                                    Intelligence
+                                </span>
+
+                                <span class="node-desc">
+                                    Models, reasoning & RAG
+                                </span>
+
+                            </div>
+
+
+                            <span class="node-metric">
+                                process
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="pipeline-flow"
+                            aria-hidden="true"
+                        >
+                            <span></span>
+                        </div>
+
+
+                        <!-- AUTOMATION -->
+
+                        <div
+                            class="pipeline-node"
+                            data-stage="3"
+                        >
+
+                            <div class="node-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                >
+
+                                    <path
+                                        d="M12 3v6l4 2M7 20a5 5 0 0 1-3-9M17 20a5 5 0 0 0 3-9"
+                                        stroke="currentColor"
+                                        stroke-width="1.6"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+
+                                    <circle
+                                        cx="12"
+                                        cy="20"
+                                        r="1.6"
+                                        fill="currentColor"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <div class="node-body">
+
+                                <span class="node-label">
+                                    Automation
+                                </span>
+
+                                <span class="node-desc">
+                                    Agents & workflows
+                                </span>
+
+                            </div>
+
+
+                            <span class="node-metric">
+                                execute
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="pipeline-flow"
+                            aria-hidden="true"
+                        >
+                            <span></span>
+                        </div>
+
+
+                        <!-- OUTCOME -->
+
+                        <div
+                            class="pipeline-node outcome"
+                            data-stage="4"
+                        >
+
+                            <div class="node-icon success">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                >
+
+                                    <path
+                                        d="M4 15l4-4 3 3 5-6 4 4"
+                                        stroke="currentColor"
+                                        stroke-width="1.6"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+
+                            <div class="node-body">
+
+                                <span class="node-label">
+                                    Business Outcome
+                                </span>
+
+                                <span class="node-desc">
+                                    Measurable results
+                                </span>
+
+                            </div>
+
+
+                            <span class="node-metric success-metric">
+                                ready
+                            </span>
+
+                        </div>
+
                     </div>
+
                 </div>
 
             </div>
+
         </section>
-        <!-- =========================
-          ABOUT SECTION
-         ========================= -->
 
-<section class="about-section" id="about">
 
-    <div class="container">
 
-        <div class="section-heading">
+        <!-- ========================================================
+             TRUST STRIP
+             ======================================================== -->
 
-            <span class="section-tag">
-                About Us
-            </span>
+        <section
+            class="trust"
+            aria-label="What we focus on"
+        >
 
-            <h2 class="section-title">
-                Building Intelligent Digital Solutions
-            </h2>
+            <div class="container">
 
-            <p class="section-description">
-                We help businesses grow through intelligent software, automation,
-                and modern digital solutions. Our goal is to create technology that
-                simplifies complex work and enables organizations to operate more
-                efficiently.
-            </p>
-
-        </div>
-
-        <div class="about-grid">
-
-            <article class="about-card">
-
-                <h3>Our Mission</h3>
-
-                <p>
-                    To build reliable software and AI-powered solutions that
-                    empower businesses to automate processes, improve productivity,
-                    and achieve sustainable growth.
+                <p class="trust-label">
+                    Where we engineer value
                 </p>
 
-            </article>
 
-            <article class="about-card">
+                <ul class="trust-list">
 
-                <h3>Our Vision</h3>
+                    <li>
+                        AI Engineering
+                    </li>
 
-                <p>
-                    To become a globally recognized technology company creating
-                    innovative digital products that shape the future of business.
-                </p>
+                    <li>
+                        Automation
+                    </li>
 
-            </article>
-            <article class="about-card">
+                    <li>
+                        Intelligent Systems
+                    </li>
 
-    <h3>Innovation</h3>
+                    <li>
+                        Data Intelligence
+                    </li>
 
-    <p>
-        We continuously explore emerging technologies to develop innovative
-        digital solutions that help businesses stay competitive in a rapidly
-        evolving world.
-    </p>
-
-</article>
-
-<article class="about-card">
-
-    <h3>Reliability</h3>
-
-    <p>
-        We believe technology should be secure, dependable, and scalable,
-        ensuring our clients can confidently build their future with us.
-    </p>
-
-</article>
-
-        </div>
-
-    </div>
-
-    </section>
-    <!-- =========================
-     SERVICES SECTION
-========================= -->
-
-<section class="services-section" id="services">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                Our Services
-            </span>
-
-            <h2 class="section-title">
-                Engineering Solutions That Drive Growth
-            </h2>
-
-            <p class="section-description">
-                We design intelligent digital systems that help businesses innovate,
-                automate operations, and build scalable software for the future.
-            </p>
-
-        </div>
-
-        <div class="services-grid">
-
-            <article class="service-card">
-
-                <div class="service-icon">🤖</div>
-
-                <h3>AI Engineering</h3>
-
-                <p>
-                    Design and development of AI-powered systems, assistants,
-                    and intelligent business applications.
-                </p>
-
-            </article>
-
-            <article class="service-card">
-
-                <div class="service-icon">💻</div>
-
-                <h3>Custom Software Development</h3>
-
-                <p>
-                    Modern web applications, SaaS platforms,
-                    and enterprise software tailored to your business.
-                </p>
-
-            </article>
-
-            <article class="service-card">
-
-                <div class="service-icon">⚙️</div>
-
-                <h3>Intelligent Automation</h3>
-
-                <p>
-                    Automate workflows, integrate business tools,
-                    and eliminate repetitive manual processes.
-                </p>
-
-            </article>
-
-            <article class="service-card">
-
-                <div class="service-icon">📊</div>
-
-                <h3>Data Intelligence & Analytics</h3>
-
-                <p>
-                    Transform business data into actionable insights
-                    with dashboards and AI-driven analytics.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- =========================
-     FEATURED SOLUTIONS
-========================= -->
-
-<section class="solutions-section" id="projects">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                Featured Solutions
-            </span>
-
-            <h2 class="section-title">
-                Intelligent Products Built for Modern Businesses
-            </h2>
-
-            <p class="section-description">
-                Explore examples of intelligent systems designed to improve
-                efficiency, automate operations, and unlock business growth.
-            </p>
-
-        </div>
-
-        <div class="solutions-grid">
-
-            <article class="solution-card">
-
-                <div class="solution-image">
-                    AI Customer Support
-                </div>
-
-                <div class="solution-content">
-
-                    <h3>AI Customer Support Assistant</h3>
-
-                    <p>
-                        Intelligent conversational assistants that provide
-                        instant support across websites and business platforms.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="solution-card">
-
-                <div class="solution-image">
-                    Business Automation
-                </div>
-
-                <div class="solution-content">
-
-                    <h3>Business Automation Platform</h3>
-
-                    <p>
-                        Automate repetitive business processes,
-                        approvals and internal workflows.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="solution-card">
-
-                <div class="solution-image">
-                    Inventory System
-                </div>
-
-                <div class="solution-content">
-
-                    <h3>Inventory Management System</h3>
-
-                    <p>
-                        Manage inventory, stock movement and reporting
-                        through a centralized digital platform.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="solution-card">
-
-                <div class="solution-image">
-                    AI Analytics
-                </div>
-
-                <div class="solution-content">
-
-                    <h3>AI Analytics Dashboard</h3>
-
-                    <p>
-                        Transform raw business data into meaningful
-                        insights using AI-powered dashboards.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- =========================
-     TECHNOLOGY STACK
-========================= -->
-
-<section class="tech-section" id="technology">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                Technology Stack
-            </span>
-
-            <h2 class="section-title">
-                Technologies We Use
-            </h2>
-
-            <p class="section-description">
-                We build reliable AI-powered software using modern web technologies,
-                scalable backend frameworks, and industry-standard development tools.
-            </p>
-
-        </div>
-
-        <div class="tech-grid">
-
-            <div class="tech-card">
-
-                <h3>Frontend</h3>
-
-                <ul>
-
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>Responsive Design</li>
+                    <li>
+                        Custom Software
+                    </li>
 
                 </ul>
 
             </div>
 
-            <div class="tech-card">
+        </section>
 
-                <h3>Backend</h3>
 
-                <ul>
 
-                    <li>Python</li>
-                    <li>FastAPI</li>
+        <!-- ========================================================
+             ABOUT
+             ======================================================== -->
 
-                </ul>
+        <section
+            class="section"
+            id="about"
+        >
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <span class="section-tag">
+                        About
+                    </span>
+
+
+                    <h2 class="section-title text-balance">
+                        Engineered to simplify complexity and enable scale
+                    </h2>
+
+
+                    <p class="section-desc text-pretty">
+
+                        Novixa exists to engineer intelligent digital
+                        systems that simplify complex business operations
+                        and give organizations a dependable foundation
+                        to grow on.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+
+                    <article class="about-card feature reveal">
+
+                        <span class="card-kicker">
+                            Mission
+                        </span>
+
+                        <p>
+
+                            To engineer reliable, intelligent software
+                            that turns complex operations into clear,
+                            automated systems — so teams spend less time
+                            on manual work and more on the decisions
+                            that matter.
+
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-card feature reveal">
+
+                        <span class="card-kicker">
+                            Vision
+                        </span>
+
+                        <p>
+
+                            A future where every ambitious organization
+                            runs on intelligent infrastructure — where
+                            AI, data and automation work together as one
+                            coherent, trustworthy system.
+
+                        </p>
+
+                    </article>
+
+
+                    <div class="principles reveal">
+
+                        <span class="card-kicker">
+                            Engineering Principles
+                        </span>
+
+
+                        <ul class="principle-list">
+
+
+                            <li>
+
+                                <span class="principle-index">
+                                    01
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Business-first engineering
+                                    </strong>
+
+                                    <span>
+                                        Every system starts from an outcome,
+                                        not a technology.
+                                    </span>
+
+                                </div>
+
+                            </li>
+
+
+                            <li>
+
+                                <span class="principle-index">
+                                    02
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Reliability
+                                    </strong>
+
+                                    <span>
+                                        Systems designed to run predictably
+                                        in production.
+                                    </span>
+
+                                </div>
+
+                            </li>
+
+
+                            <li>
+
+                                <span class="principle-index">
+                                    03
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Security-minded architecture
+                                    </strong>
+
+                                    <span>
+                                        Safeguards considered from the first
+                                        design decision.
+                                    </span>
+
+                                </div>
+
+                            </li>
+
+
+                            <li>
+
+                                <span class="principle-index">
+                                    04
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Scalability
+                                    </strong>
+
+                                    <span>
+                                        Architecture that grows with the
+                                        organization.
+                                    </span>
+
+                                </div>
+
+                            </li>
+
+
+                            <li>
+
+                                <span class="principle-index">
+                                    05
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Continuous innovation
+                                    </strong>
+
+                                    <span>
+                                        Adopting what genuinely creates value,
+                                        not hype.
+                                    </span>
+
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="tech-card">
+        </section>
 
-                <h3>AI & Automation</h3>
 
-                <ul>
 
-                    <li>OpenAI API</li>
-                    <li>Prompt Engineering</li>
-                    <li>Business Automation</li>
+        <!-- ========================================================
+             SOLUTIONS
+             ======================================================== -->
 
-                </ul>
+        <section
+            class="section section-alt"
+            id="solutions"
+        >
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <span class="section-tag">
+                        Solutions
+                    </span>
+
+
+                    <h2 class="section-title text-balance">
+                        Capabilities engineered around outcomes
+                    </h2>
+
+
+                    <p class="section-desc text-pretty">
+
+                        A connected set of capabilities — designed to
+                        work together as one intelligent system, or
+                        independently where you need them most.
+
+                    </p>
+
+                </div>
+
+
+                <div class="solutions-grid">
+
+
+                    <!-- AI ENGINEERING -->
+
+                    <article class="solution-card reveal">
+
+                        <div class="solution-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="22"
+                                height="22"
+                                fill="none"
+                            >
+
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="3"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                />
+
+                                <path
+                                    d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            AI Engineering
+                        </h3>
+
+                        <p>
+                            Design and delivery of AI-powered systems,
+                            from model integration to production-ready
+                            applications.
+                        </p>
+
+                        <span class="solution-outcome">
+                            Outcome — intelligence embedded where it drives value
+                        </span>
+
+                    </article>
+
+
+                    <!-- AUTOMATION -->
+
+                    <article class="solution-card reveal">
+
+                        <div class="solution-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="22"
+                                height="22"
+                                fill="none"
+                            >
+
+                                <path
+                                    d="M12 3v5M12 16v5M3 12h5M16 12h5"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                    stroke-linecap="round"
+                                />
+
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="6"
+                                    height="6"
+                                    rx="1.4"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            Intelligent Automation
+                        </h3>
+
+                        <p>
+                            Automate workflows, approvals and repetitive
+                            operations so teams focus on higher-value work.
+                        </p>
+
+                        <span class="solution-outcome">
+                            Outcome — lower operational overhead
+                        </span>
+
+                    </article>
+
+
+                    <!-- CUSTOM SOFTWARE -->
+
+                    <article class="solution-card reveal">
+
+                        <div class="solution-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="22"
+                                height="22"
+                                fill="none"
+                            >
+
+                                <path
+                                    d="M9 8l-4 4 4 4M15 8l4 4-4 4"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            Custom Software
+                        </h3>
+
+                        <p>
+                            Modern web applications and platforms
+                            engineered to fit the way your organization
+                            actually works.
+                        </p>
+
+                        <span class="solution-outcome">
+                            Outcome — software that fits, not compromises
+                        </span>
+
+                    </article>
+
+
+                    <!-- AI AGENTS -->
+
+                    <article class="solution-card reveal">
+
+                        <div class="solution-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="22"
+                                height="22"
+                                fill="none"
+                            >
+
+                                <rect
+                                    x="5"
+                                    y="8"
+                                    width="14"
+                                    height="11"
+                                    rx="2"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                />
+
+                                <path
+                                    d="M12 8V5M9 3h6"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                    stroke-linecap="round"
+                                />
+
+                                <circle
+                                    cx="9.5"
+                                    cy="13"
+                                    r="1"
+                                    fill="currentColor"
+                                />
+
+                                <circle
+                                    cx="14.5"
+                                    cy="13"
+                                    r="1"
+                                    fill="currentColor"
+                                />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            AI Agents
+                        </h3>
+
+                        <p>
+                            Autonomous and assisted agents that reason,
+                            retrieve knowledge and take action within
+                            guardrails.
+                        </p>
+
+                        <span class="solution-outcome">
+                            Outcome — work that runs itself, safely
+                        </span>
+
+                    </article>
+
+
+                    <!-- DATA -->
+
+                    <article class="solution-card reveal">
+
+                        <div class="solution-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="22"
+                                height="22"
+                                fill="none"
+                            >
+
+                                <path
+                                    d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            Data Intelligence
+                        </h3>
+
+                        <p>
+                            Turn raw operational data into clear,
+                            decision-ready insight with dashboards
+                            and analytics.
+                        </p>
+
+                        <span class="solution-outcome">
+                            Outcome — decisions grounded in evidence
+                        </span>
+
+                    </article>
+
+
+                    <!-- RAG -->
+
+                    <article class="solution-card reveal">
+
+                        <div class="solution-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="22"
+                                height="22"
+                                fill="none"
+                            >
+
+                                <path
+                                    d="M6 4h9l3 3v13H6z"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                    stroke-linejoin="round"
+                                />
+
+                                <path
+                                    d="M9 9h4M9 12h6M9 15h6"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            Knowledge &amp; RAG Systems
+                        </h3>
+
+                        <p>
+                            Retrieval-augmented systems that make your
+                            organization's knowledge searchable and
+                            trustworthy.
+                        </p>
+
+                        <span class="solution-outcome">
+                            Outcome — answers with context and accuracy
+                        </span>
+
+                    </article>
+
+                </div>
 
             </div>
 
-            <div class="tech-card">
+        </section>
 
-                <h3>Development</h3>
 
-                <ul>
 
-                    <li>Git</li>
-                    <li>GitHub</li>
-                    <li>Vercel</li>
+        <!-- ========================================================
+             SERVICES
+             Original Novixa service offering retained
+             ======================================================== -->
 
-                </ul>
+        <section
+            class="section"
+            id="services"
+        >
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <span class="section-tag">
+                        Services
+                    </span>
+
+
+                    <h2 class="section-title text-balance">
+                        Engineering Solutions That Drive Growth
+                    </h2>
+
+
+                    <p class="section-desc text-pretty">
+
+                        We design intelligent digital systems that help
+                        businesses innovate, automate operations, and
+                        build scalable software for the future.
+
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-icon">
+                            🤖
+                        </div>
+
+                        <h3>
+                            AI Engineering
+                        </h3>
+
+                        <p>
+                            Design and development of AI-powered systems,
+                            assistants, and intelligent business applications.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Custom Software Development
+                        </h3>
+
+                        <p>
+                            Modern web applications, SaaS platforms,
+                            and enterprise software tailored to your business.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-icon">
+                            ⚙️
+                        </div>
+
+                        <h3>
+                            Intelligent Automation
+                        </h3>
+
+                        <p>
+                            Automate workflows, integrate business tools,
+                            and eliminate repetitive manual processes.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Data Intelligence &amp; Analytics
+                        </h3>
+
+                        <p>
+                            Transform business data into actionable insights
+                            with dashboards and AI-driven analytics.
+                        </p>
+
+                    </article>
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
 
-</section>
-<!-- =========================
-     WHY CHOOSE NOVIXA
-========================= -->
 
-<section class="why-section">
+        <!-- ========================================================
+             PROCESS
+             ======================================================== -->
 
-    <div class="container">
+        <section
+            class="section section-alt"
+            id="process"
+        >
 
-        <div class="section-heading">
+            <div class="container">
 
-            <span class="section-tag">
-                Why Choose Novixa
-            </span>
+                <div class="section-head reveal">
 
-            <h2 class="section-title">
-                A Technology Partner Focused on Real Business Results
-            </h2>
+                    <span class="section-tag">
+                        How We Engineer
+                    </span>
 
-            <p class="section-description">
-                We combine intelligent software, automation, and modern engineering
-                practices to deliver scalable digital solutions that help businesses
-                grow efficiently.
-            </p>
 
-        </div>
+                    <h2 class="section-title text-balance">
+                        From business problem to production system
+                    </h2>
 
-        <div class="why-grid">
 
-            <div class="why-card">
+                    <p class="section-desc text-pretty">
 
-                <h3>Business First</h3>
+                        A disciplined path that turns ambiguity into
+                        an intelligent, dependable system — engineered
+                        as a partner, not a vendor.
 
-                <p>
-                    Every solution is designed to solve a business problem,
-                    not simply implement technology.
-                </p>
+                    </p>
+
+                </div>
+
+
+                <ol class="process-track reveal">
+
+
+                    <li class="process-step">
+
+                        <span class="step-num">
+                            01
+                        </span>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+                            Understand the business problem, constraints
+                            and desired outcome.
+                        </p>
+
+                    </li>
+
+
+                    <li class="process-step">
+
+                        <span class="step-num">
+                            02
+                        </span>
+
+                        <h3>
+                            Architect
+                        </h3>
+
+                        <p>
+                            Design the system, data flow and integration points.
+                        </p>
+
+                    </li>
+
+
+                    <li class="process-step">
+
+                        <span class="step-num">
+                            03
+                        </span>
+
+                        <h3>
+                            Engineer
+                        </h3>
+
+                        <p>
+                            Build reliable, secure and maintainable software.
+                        </p>
+
+                    </li>
+
+
+                    <li class="process-step">
+
+                        <span class="step-num">
+                            04
+                        </span>
+
+                        <h3>
+                            Integrate
+                        </h3>
+
+                        <p>
+                            Connect intelligence into existing tools
+                            and operations.
+                        </p>
+
+                    </li>
+
+
+                    <li class="process-step">
+
+                        <span class="step-num">
+                            05
+                        </span>
+
+                        <h3>
+                            Validate
+                        </h3>
+
+                        <p>
+                            Test for correctness, performance and safety
+                            in real conditions.
+                        </p>
+
+                    </li>
+
+
+                    <li class="process-step">
+
+                        <span class="step-num">
+                            06
+                        </span>
+
+                        <h3>
+                            Scale
+                        </h3>
+
+                        <p>
+                            Operate, monitor and evolve the system as
+                            the business grows.
+                        </p>
+
+                    </li>
+
+                </ol>
 
             </div>
 
-            <div class="why-card">
+        </section>
 
-                <h3>Modern Engineering</h3>
 
-                <p>
-                    We use reliable development practices and scalable
-                    architectures for long-term success.
-                </p>
+
+        <!-- ========================================================
+             TECHNOLOGY
+             ======================================================== -->
+
+        <section
+            class="section"
+            id="technology"
+        >
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <span class="section-tag">
+                        Technology
+                    </span>
+
+
+                    <h2 class="section-title text-balance">
+                        An architecture, not a logo wall
+                    </h2>
+
+
+                    <p class="section-desc text-pretty">
+
+                        We build reliable AI-powered software using modern
+                        web technologies, scalable backend systems and
+                        intelligent data infrastructure.
+
+                    </p>
+
+                </div>
+
+
+                <div class="tech-grid">
+
+
+                    <article class="tech-layer reveal">
+
+                        <header>
+
+                            <span class="layer-index">
+                                L1
+                            </span>
+
+                            <h3>
+                                Frontend
+                            </h3>
+
+                        </header>
+
+                        <ul>
+
+                            <li>
+                                HTML
+                            </li>
+
+                            <li>
+                                CSS
+                            </li>
+
+                            <li>
+                                JavaScript
+                            </li>
+
+                            <li>
+                                Responsive UI
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="tech-layer reveal">
+
+                        <header>
+
+                            <span class="layer-index">
+                                L2
+                            </span>
+
+                            <h3>
+                                Backend
+                            </h3>
+
+                        </header>
+
+                        <ul>
+
+                            <li>
+                                Python
+                            </li>
+
+                            <li>
+                                FastAPI
+                            </li>
+
+                            <li>
+                                REST APIs
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="tech-layer reveal">
+
+                        <header>
+
+                            <span class="layer-index">
+                                L3
+                            </span>
+
+                            <h3>
+                                AI
+                            </h3>
+
+                        </header>
+
+                        <ul>
+
+                            <li>
+                                AI APIs
+                            </li>
+
+                            <li>
+                                Prompt Engineering
+                            </li>
+
+                            <li>
+                                Agents
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="tech-layer reveal">
+
+                        <header>
+
+                            <span class="layer-index">
+                                L4
+                            </span>
+
+                            <h3>
+                                Data
+                            </h3>
+
+                        </header>
+
+                        <ul>
+
+                            <li>
+                                RAG
+                            </li>
+
+                            <li>
+                                Embeddings
+                            </li>
+
+                            <li>
+                                Knowledge Bases
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="tech-layer reveal">
+
+                        <header>
+
+                            <span class="layer-index">
+                                L5
+                            </span>
+
+                            <h3>
+                                Infrastructure
+                            </h3>
+
+                        </header>
+
+                        <ul>
+
+                            <li>
+                                Automation
+                            </li>
+
+                            <li>
+                                Scalable Services
+                            </li>
+
+                            <li>
+                                Deployment
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="tech-layer reveal">
+
+                        <header>
+
+                            <span class="layer-index">
+                                L6
+                            </span>
+
+                            <h3>
+                                Development
+                            </h3>
+
+                        </header>
+
+                        <ul>
+
+                            <li>
+                                Git
+                            </li>
+
+                            <li>
+                                GitHub
+                            </li>
+
+                            <li>
+                                CI Workflows
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
 
             </div>
 
-            <div class="why-card">
+        </section>
 
-                <h3>AI Driven</h3>
 
-                <p>
-                    Artificial intelligence is integrated where it creates
-                    measurable value for the client.
-                </p>
+
+        <!-- ========================================================
+             INTELLIGENT SYSTEM
+             ======================================================== -->
+
+        <section
+            class="section system-section"
+            aria-label="How an intelligent system flows"
+        >
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <span class="section-tag">
+                        Intelligent System
+                    </span>
+
+
+                    <h2 class="section-title text-balance">
+                        One system, from data to measurable outcome
+                    </h2>
+
+
+                    <p class="section-desc text-pretty">
+
+                        Every layer feeds the next. This is the shape
+                        of the systems we engineer.
+
+                    </p>
+
+                </div>
+
+
+                <div class="system-flow reveal">
+
+
+                    <div
+                        class="system-layer"
+                        data-layer="1"
+                    >
+
+                        <div class="layer-tag">
+                            Source
+                        </div>
+
+                        <div class="layer-content">
+
+                            <h3>
+                                User &amp; Business Data
+                            </h3>
+
+                            <p>
+                                Documents, operations, events and interactions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="system-connector"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <div
+                        class="system-layer"
+                        data-layer="2"
+                    >
+
+                        <div class="layer-tag">
+                            Reason
+                        </div>
+
+                        <div class="layer-content">
+
+                            <h3>
+                                AI / Intelligence Layer
+                            </h3>
+
+                            <p>
+                                Models interpret, reason and generate.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="system-connector"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <div
+                        class="system-layer"
+                        data-layer="3"
+                    >
+
+                        <div class="layer-tag">
+                            Recall
+                        </div>
+
+                        <div class="layer-content">
+
+                            <h3>
+                                Knowledge / RAG
+                            </h3>
+
+                            <p>
+                                Grounded in your organization's knowledge.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="system-connector"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <div
+                        class="system-layer"
+                        data-layer="4"
+                    >
+
+                        <div class="layer-tag">
+                            Act
+                        </div>
+
+                        <div class="layer-content">
+
+                            <h3>
+                                Automation / Agents
+                            </h3>
+
+                            <p>
+                                Systems take action within guardrails.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="system-connector"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <div
+                        class="system-layer"
+                        data-layer="5"
+                    >
+
+                        <div class="layer-tag">
+                            Deliver
+                        </div>
+
+                        <div class="layer-content">
+
+                            <h3>
+                                Business Applications
+                            </h3>
+
+                            <p>
+                                Intelligence surfaced where work happens.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="system-connector"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <div
+                        class="system-layer outcome-layer"
+                        data-layer="6"
+                    >
+
+                        <div class="layer-tag">
+                            Result
+                        </div>
+
+                        <div class="layer-content">
+
+                            <h3>
+                                Measurable Outcomes
+                            </h3>
+
+                            <p>
+                                Efficiency, clarity and scale you can measure.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="why-card">
+        </section>
 
-                <h3>Long-Term Partnership</h3>
 
-                <p>
-                    We aim to build lasting relationships by continuously
-                    improving systems as businesses evolve.
-                </p>
+
+        <!-- ========================================================
+             PROJECTS
+             ======================================================== -->
+
+        <section
+            class="section section-alt"
+            id="projects"
+        >
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <span class="section-tag">
+                        Projects
+                    </span>
+
+
+                    <h2 class="section-title text-balance">
+                        Solution concepts we're engineered to build
+                    </h2>
+
+
+                    <p class="section-desc text-pretty">
+
+                        Representative concepts that show how we
+                        approach real problems. Each is a solution
+                        concept — a blueprint for the systems we deliver.
+
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-head">
+
+                            <span class="project-label">
+                                Solution Concept
+                            </span>
+
+                            <h3>
+                                AI Customer Support Assistant
+                            </h3>
+
+                        </div>
+
+
+                        <dl class="project-detail">
+
+                            <div>
+
+                                <dt>
+                                    Problem
+                                </dt>
+
+                                <dd>
+                                    Support teams overwhelmed by
+                                    repetitive questions.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Solution
+                                </dt>
+
+                                <dd>
+                                    A grounded assistant that answers
+                                    instantly from trusted knowledge.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Technology
+                                </dt>
+
+                                <dd>
+                                    AI APIs · RAG · Embeddings
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Outcome
+                                </dt>
+
+                                <dd>
+                                    Faster responses and freed-up
+                                    human capacity.
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </article>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-head">
+
+                            <span class="project-label">
+                                Solution Concept
+                            </span>
+
+                            <h3>
+                                Business Automation Platform
+                            </h3>
+
+                        </div>
+
+
+                        <dl class="project-detail">
+
+                            <div>
+
+                                <dt>
+                                    Problem
+                                </dt>
+
+                                <dd>
+                                    Manual approvals and workflows
+                                    slow the business down.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Solution
+                                </dt>
+
+                                <dd>
+                                    A platform that automates processes
+                                    end to end.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Technology
+                                </dt>
+
+                                <dd>
+                                    FastAPI · Automation · Agents
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Outcome
+                                </dt>
+
+                                <dd>
+                                    Lower overhead and fewer errors.
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </article>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-head">
+
+                            <span class="project-label">
+                                Solution Concept
+                            </span>
+
+                            <h3>
+                                Inventory Management System
+                            </h3>
+
+                        </div>
+
+
+                        <dl class="project-detail">
+
+                            <div>
+
+                                <dt>
+                                    Problem
+                                </dt>
+
+                                <dd>
+                                    Fragmented stock data across
+                                    tools and locations.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Solution
+                                </dt>
+
+                                <dd>
+                                    A centralized system for stock,
+                                    movement and reporting.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Technology
+                                </dt>
+
+                                <dd>
+                                    Custom Software · Data · APIs
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Outcome
+                                </dt>
+
+                                <dd>
+                                    A single source of truth for operations.
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </article>
+
+
+                    <!-- PROJECT 4 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-head">
+
+                            <span class="project-label">
+                                Solution Concept
+                            </span>
+
+                            <h3>
+                                AI Analytics Dashboard
+                            </h3>
+
+                        </div>
+
+
+                        <dl class="project-detail">
+
+                            <div>
+
+                                <dt>
+                                    Problem
+                                </dt>
+
+                                <dd>
+                                    Data exists, but insight is hard to reach.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Solution
+                                </dt>
+
+                                <dd>
+                                    An AI-assisted dashboard that surfaces
+                                    what matters.
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Technology
+                                </dt>
+
+                                <dd>
+                                    Data Intelligence · AI APIs
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Outcome
+                                </dt>
+
+                                <dd>
+                                    Decisions grounded in real evidence.
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </article>
+
+                </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-<!-- =========================
-     CONTACT SECTION
-========================= -->
-
-<section class="contact-section" id="contact">
-
-<div class="container">
-
-<div class="section-heading">
-
-<span class="section-tag">
-Contact
-</span>
-
-<h2 class="section-title">
-Let's Build Something Intelligent
-</h2>
-
-<p class="section-description">
-Tell us about your project and we will help you design the right digital solution.
-</p>
-
-</div>
-
-
-<div class="contact-grid">
-
-
-<div class="contact-info">
-
-
-<h3>
-Get In Touch
-</h3>
-
-
-<p>
-📧 hello@novixa.com
-</p>
-
-
-<p>
-🌎 Worldwide Remote Services
-</p>
-
-
-<p>
-⏱ Response Time: Within 24 Hours
-</p>
-
-
-</div>
+        </section>
 
 
 
-<div class="contact-form-card">
+        <!-- ========================================================
+             WHY NOVIXA
+             ======================================================== -->
+
+        <section
+            class="section"
+            id="why"
+        >
+
+            <div class="container">
+
+                <div class="why-layout">
 
 
-<form id="contact-form">
+                    <div class="section-head align-left reveal">
+
+                        <span class="section-tag">
+                            Why Novixa
+                        </span>
 
 
-<input 
-id="name"
-type="text"
-placeholder="Your Name"
-required
->
+                        <h2 class="section-title text-balance">
+                            A partner engineered for the long term
+                        </h2>
 
 
-<input
-id="company"
-type="text"
-placeholder="Company Name"
->
+                        <p class="section-desc text-pretty">
+
+                            We combine engineering discipline with a
+                            clear focus on business value — built for
+                            executives and technical teams alike.
+
+                        </p>
+
+                    </div>
 
 
-<input
-    id="email"
-    name="email"
-    type="email"
-    autocomplete="email"
-    placeholder="Business Email"
-    required
->
+                    <ul class="why-list reveal">
 
 
-<select id="project">
+                        <li>
 
-<option>
-Select Project Type
-</option>
+                            <h3>
+                                Business First
+                            </h3>
 
-<option>
-AI Engineering
-</option>
+                            <p>
+                                Technology in service of outcomes,
+                                never the other way around.
+                            </p>
 
-<option>
-Business Automation
-</option>
-
-<option>
-Custom Software
-</option>
-
-<option>
-AI Consultation
-</option>
-
-</select>
+                        </li>
 
 
-<textarea
-id="message"
-rows="6"
-placeholder="Tell us about your project..."
-required>
-</textarea>
+                        <li>
+
+                            <h3>
+                                Modern Engineering
+                            </h3>
+
+                            <p>
+                                Reliable practices and architectures
+                                built to last.
+                            </p>
+
+                        </li>
+
+
+                        <li>
+
+                            <h3>
+                                AI Where It Creates Value
+                            </h3>
+
+                            <p>
+                                Intelligence applied deliberately,
+                                where it measurably helps.
+                            </p>
+
+                        </li>
+
+
+                        <li>
+
+                            <h3>
+                                Scalable Architecture
+                            </h3>
+
+                            <p>
+                                Systems designed to grow with
+                                your organization.
+                            </p>
+
+                        </li>
+
+
+                        <li>
+
+                            <h3>
+                                Long-Term Partnership
+                            </h3>
+
+                            <p>
+                                We evolve your systems as your
+                                business evolves.
+                            </p>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
 
-<button class="btn btn-primary">
+        <!-- ========================================================
+             CTA
+             ======================================================== -->
 
-Send Message
+        <section class="cta-section">
 
-</button>
+            <div class="container">
 
+                <div class="cta-card reveal">
 
-</form>
-
-
-</div>
-
-
-</div>
+                    <div
+                        class="cta-glow"
+                        aria-hidden="true"
+                    ></div>
 
 
-</div>
+                    <h2 class="text-balance">
+                        Ready to engineer what's next?
+                    </h2>
 
-</section>
+
+                    <p class="text-pretty">
+
+                        Let's talk about AI transformation,
+                        automation, software modernization,
+                        intelligent systems and custom digital products.
+
+                    </p>
+
+
+                    <a
+                        href="#contact"
+                        class="btn btn-primary btn-lg"
+                    >
+                        Start a Conversation
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================================
+             CONTACT
+             ======================================================== -->
+
+        <section
+            class="section"
+            id="contact"
+        >
+
+            <div class="container">
+
+                <div class="contact-layout">
+
+
+                    <!-- CONTACT INFORMATION -->
+
+                    <div class="contact-intro reveal">
+
+                        <span class="section-tag">
+                            Contact
+                        </span>
+
+
+                        <h2 class="section-title align-left text-balance">
+                            Let's build something intelligent
+                        </h2>
+
+
+                        <p class="section-desc align-left text-pretty">
+
+                            Tell us about your project and we'll help
+                            you design the right intelligent system.
+
+                        </p>
+
+
+                        <ul class="contact-points">
+
+
+                            <li>
+
+                                <span class="contact-point-label">
+                                    Email
+                                </span>
+
+                                <span class="contact-point-value">
+                                    hello@novixa.com
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <span class="contact-point-label">
+                                    Availability
+                                </span>
+
+                                <span class="contact-point-value">
+                                    Worldwide, remote-first
+                                </span>
+
+                            </li>
+
+
+                            <li>
+
+                                <span class="contact-point-label">
+                                    Response
+                                </span>
+
+                                <span class="contact-point-value">
+                                    Within 24 hours
+                                </span>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- CONTACT FORM -->
+
+                    <div class="contact-card reveal">
+
+                        <form
+                            id="contact-form"
+                            novalidate
+                        >
+
+
+                            <div class="field-row">
+
+
+                                <div class="field">
+
+                                    <label for="name">
+                                        Name
+                                    </label>
+
+                                    <input
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        autocomplete="name"
+                                        placeholder="Your full name"
+                                        required
+                                        minlength="2"
+                                    >
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label for="company">
+                                        Company
+                                    </label>
+
+                                    <input
+                                        id="company"
+                                        name="company"
+                                        type="text"
+                                        autocomplete="organization"
+                                        placeholder="Your company"
+                                        required
+                                        minlength="2"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="email">
+                                    Business Email
+                                </label>
+
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    autocomplete="email"
+                                    placeholder="you@company.com"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="project">
+                                    Project Type
+                                </label>
+
+                                <select
+                                    id="project"
+                                    name="project"
+                                    required
+                                >
+
+                                    <option
+                                        value=""
+                                        disabled
+                                        selected
+                                    >
+                                        Select a project type
+                                    </option>
+
+                                    <option>
+                                        AI Engineering
+                                    </option>
+
+                                    <option>
+                                        AI Agents
+                                    </option>
+
+                                    <option>
+                                        Business Automation
+                                    </option>
+
+                                    <option>
+                                        Custom Software
+                                    </option>
+
+                                    <option>
+                                        Data Intelligence
+                                    </option>
+
+                                    <option>
+                                        RAG / Knowledge Systems
+                                    </option>
+
+                                    <option>
+                                        AI Consultation
+                                    </option>
+
+                                    <option>
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="message">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Tell us about your project, goals and timeline..."
+                                    required
+                                    minlength="10"
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary btn-block"
+                                id="contact-submit"
+                            >
+                                Send Message
+                            </button>
+
+
+                            <p
+                                class="form-status"
+                                id="form-status"
+                                role="status"
+                                aria-live="polite"
+                            ></p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
-    <!-- =========================
-     FOOTER
-========================= -->
 
-<footer class="footer">
 
-    <div class="container footer-grid">
 
-        <div class="footer-brand">
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
 
-            <h2>Novixa</h2>
+    <footer class="site-footer">
 
-            <p>
-                Engineering Intelligent Digital Systems that help businesses
-                automate, innovate, and grow through modern software and AI.
-            </p>
+        <div class="container footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="#home"
+                    class="brand"
+                >
+
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 32 32"
+                            width="26"
+                            height="26"
+                            fill="none"
+                        >
+
+                            <path
+                                d="M6 24V8l10 8 10-8v16"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <circle
+                                cx="16"
+                                cy="16"
+                                r="2.4"
+                                fill="currentColor"
+                            />
+
+                        </svg>
+
+                    </span>
+
+
+                    <span class="brand-name">
+                        Novixa
+                    </span>
+
+                </a>
+
+
+                <p>
+                    Engineering Intelligent Digital Systems.
+                </p>
+
+            </div>
+
+
+
+            <!-- COMPANY -->
+
+            <nav
+                class="footer-col"
+                aria-label="Company"
+            >
+
+                <h3>
+                    Company
+                </h3>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#why">
+                    Why Novixa
+                </a>
+
+                <a href="#process">
+                    How We Engineer
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+            </nav>
+
+
+
+            <!-- EXPLORE -->
+
+            <nav
+                class="footer-col"
+                aria-label="Explore"
+            >
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="#solutions">
+                    Solutions
+                </a>
+
+                <a href="#technology">
+                    Technology
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+            </nav>
+
+
+
+            <!-- CONTACT -->
+
+            <nav
+                class="footer-col"
+                aria-label="Get in touch"
+            >
+
+                <h3>
+                    Get in touch
+                </h3>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms of Service
+                </a>
+
+            </nav>
 
         </div>
 
-        <div class="footer-links">
 
-            <h3>Company</h3>
 
-            <ul>
+        <!-- FOOTER BOTTOM -->
 
-                <li><a href="#about">About</a></li>
+        <div class="footer-bottom">
 
-                <li><a href="#services">Services</a></li>
+            <div class="container">
 
-                <li><a href="#projects">Solutions</a></li>
+                <p>
+                    &copy;
+                    <span id="year">2026</span>
+                    Novixa. All rights reserved.
+                </p>
 
-                <li><a href="#technology">Technology</a></li>
 
-                <li><a href="#contact">Contact</a></li>
+                <p class="footer-note">
+                    Engineering Intelligent Digital Systems.
+                </p>
 
-            </ul>
-
-        </div>
-
-        <div class="footer-contact">
-
-            <h3>Contact</h3>
-
-            <p>📧 hello@novixa.com</p>
-
-            <p>🌍 Worldwide Remote Services</p>
-
-            <p>🕒 Monday – Friday</p>
-
-        </div>
-        <div class="footer-links">
-
-        <a href="privacy.html">Privacy Policy</a>
-
-        <a href="terms.html">Terms of Service</a>
+            </div>
 
         </div>
 
-    </div>
+    </footer>
 
-    <div class="footer-bottom">
 
-        <p>
 
-            © 2026 Novixa. All Rights Reserved.
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
 
-        </p>
-
-    </div>
-    
-
-</footer>
-<script src="js/navigation.js"></script>
-<script src="js/animation.js"></script>
-<script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
-
 
 </html>

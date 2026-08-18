@@ -4,7 +4,11 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Novixa Admin Dashboard</title>
 
@@ -12,103 +16,388 @@
 
 </head>
 
+
 <body>
 
-<header>
+<div class="admin-layout">
 
-    <h1>Novixa Admin Dashboard</h1>
 
-    <p>Client Leads</p>
+    <!-- SIDEBAR -->
 
-</header>
+    <aside class="sidebar">
 
-<main>
+        <div class="brand">
 
-    <section class="stats">
+            <div class="brand-mark">
+                N
+            </div>
 
-        <div class="card">
+            <div>
 
-            <h3>Total Leads</h3>
+                <strong>Novixa</strong>
 
-            <h2 id="totalLeads">0</h2>
+                <span>Administration</span>
 
-        </div>
-
-        <div class="card">
-
-            <h3>AI Projects</h3>
-
-            <h2 id="aiProjects">0</h2>
+            </div>
 
         </div>
 
-        <div class="card">
 
-            <h3>Automation</h3>
+        <nav class="sidebar-nav">
 
-            <h2 id="automationProjects">0</h2>
-
-        </div>
-
-    </section>
-
-
-    <section class="controls">
-
-        <div class="search-box">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search by name, company or email..."
+            <a
+                href="#"
+                class="nav-item active"
             >
+                <span>Overview</span>
+            </a>
+
+            <a
+                href="#leads"
+                class="nav-item"
+            >
+                <span>Client Leads</span>
+            </a>
+
+            <a
+                href="#projects"
+                class="nav-item"
+            >
+                <span>Projects</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+                type="button"
+            >
+                Logout
+            </button>
 
         </div>
 
-
-        <div class="filter-box">
-
-            <select id="statusFilter">
-
-                <option value="">All Statuses</option>
-                <option value="new">New</option>
-                <option value="contacted">Contacted</option>
-                <option value="qualified">Qualified</option>
-                <option value="closed">Closed</option>
-
-            </select>
-
-        </div>
-
-    </section>
+    </aside>
 
 
-    <section class="table-container">
+    <!-- MAIN -->
 
-        <table>
+    <main class="main-content">
 
-            <thead>
 
-                <tr>
+        <!-- TOP BAR -->
 
-                    <th>Name</th>
-                    <th>Company</th>
-                    <th>Email</th>
-                    <th>Project</th>
-                    <th>Status</th>
-                    <th>Created</th>
+        <header class="topbar">
 
-                </tr>
+            <div>
 
-            </thead>
+                <p class="eyebrow">
+                    NOVIXA ADMIN
+                </p>
 
-            <tbody id="leadTable"></tbody>
+                <h1>
+                    Operations Dashboard
+                </h1>
 
-        </table>
+            </div>
 
-    </section>
 
-</main>
+            <div class="admin-user">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- OVERVIEW -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Overview
+                    </h2>
+
+                    <p>
+                        Monitor incoming client inquiries and project opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <article class="stat-card">
+
+                    <span class="stat-label">
+                        Total Leads
+                    </span>
+
+                    <strong
+                        id="totalLeads"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <span class="stat-label">
+                        New Leads
+                    </span>
+
+                    <strong
+                        id="newLeads"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <span class="stat-label">
+                        AI Projects
+                    </span>
+
+                    <strong
+                        id="aiProjects"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <span class="stat-label">
+                        Automation
+                    </span>
+
+                    <strong
+                        id="automationProjects"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- LEADS -->
+
+        <section
+            id="leads"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Client Leads
+                    </h2>
+
+                    <p>
+                        Review and manage incoming project inquiries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="controls">
+
+                <div class="search-box">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search name, company or email..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <select id="statusFilter">
+
+                        <option value="">
+                            All Statuses
+                        </option>
+
+                        <option value="new">
+                            New
+                        </option>
+
+                        <option value="contacted">
+                            Contacted
+                        </option>
+
+                        <option value="qualified">
+                            Qualified
+                        </option>
+
+                        <option value="closed">
+                            Closed
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="table-card">
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    Client
+                                </th>
+
+                                <th>
+                                    Company
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    Project
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Created
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="leadTable">
+
+                            <tr>
+
+                                <td
+                                    colspan="7"
+                                    class="loading"
+                                >
+                                    Loading client leads...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section
+            id="projects"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Project Overview
+                    </h2>
+
+                    <p>
+                        Project information will be expanded as Novixa builds its portfolio.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="empty-state">
+
+                <span class="empty-icon">
+                    N
+                </span>
+
+                <h3>
+                    Project management is coming later
+                </h3>
+
+                <p>
+                    We will connect real Novixa projects here when the project portfolio is ready.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
 
 <script src="admin.js"></script>
 
