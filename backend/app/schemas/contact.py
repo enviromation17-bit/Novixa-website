@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field, EmailStr
 
 
+
 class ContactRequest(BaseModel):
 
     name: str = Field(
