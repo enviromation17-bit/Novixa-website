@@ -11,6 +11,7 @@ from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from app.core.limiter import limiter
 from app.routes.v1 import agents
+from app.routes.v1 import rag
 
 app = FastAPI(
 
@@ -110,4 +111,8 @@ app.include_router(
 app.include_router(
     agents.router,
     prefix="/api/v1"
+)
+app.include_router(
+    rag.router,
+    prefix="/api/v1",
 )
