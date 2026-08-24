@@ -4,13 +4,14 @@ from app.database import engine, Base
 from app.routes.v1 import contact
 from app.routes.v1 import auth
 from app.core.exceptions import global_exception_handler
-from app.routes.v1 import  services
+from app.routes.v1 import services
 from app.middleware.logging import LoggingMiddleware
 from app.middleware.request_id import RequestIDMiddleware
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from app.core.limiter import limiter
 from app.routes.v1 import agents
+from app.routes.v1 import agent_memory
 from app.routes.v1 import rag
 
 app = FastAPI(
@@ -113,6 +114,10 @@ app.include_router(
     prefix="/api/v1"
 )
 app.include_router(
+    agent_memory.router,
+    prefix="/api/v1"
+)
+app.include_router(
     rag.router,
-    prefix="/api/v1",
+    prefix="/api/v1"
 )

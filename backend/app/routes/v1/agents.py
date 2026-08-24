@@ -1,22 +1,36 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
 
+from app.database import SessionLocal
 from app.schemas.agent import Agent, AgentRole
 from app.services.agent_service import AgentService
 
 
 router = APIRouter()
 
-agent_service = AgentService()
+
+def get_db():
+    db = SessionLocal()
+
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 @router.post(
     "/agents",
     response_model=Agent,
     summary="Create Agent",
-    description="Creates and registers an AI agent.",
+    description="Creates and registers a persistent AI agent.",
     tags=["Agents"],
 )
-def create_agent(agent: Agent):
+def create_agent(
+    agent: Agent,
+    db: Session = Depends(get_db),
+):
+    agent_service = AgentService(db)
+
     existing = agent_service.get_agent(agent.id)
 
     if existing is not None:
@@ -35,7 +49,11 @@ def create_agent(agent: Agent):
     description="Returns all registered AI agents.",
     tags=["Agents"],
 )
-def list_agents():
+def list_agents(
+    db: Session = Depends(get_db),
+):
+    agent_service = AgentService(db)
+
     return agent_service.list_agents()
 
 
@@ -46,7 +64,12 @@ def list_agents():
     description="Returns a registered AI agent by ID.",
     tags=["Agents"],
 )
-def get_agent(agent_id: str):
+def get_agent(
+    agent_id: str,
+    db: Session = Depends(get_db),
+):
+    agent_service = AgentService(db)
+
     agent = agent_service.get_agent(agent_id)
 
     if agent is None:
@@ -65,7 +88,12 @@ def get_agent(agent_id: str):
     description="Returns agents matching a specific role.",
     tags=["Agents"],
 )
-def find_agents_by_role(role: AgentRole):
+def find_agents_by_role(
+    role: AgentRole,
+    db: Session = Depends(get_db),
+):
+    agent_service = AgentService(db)
+
     return agent_service.find_by_role(role)
 
 
@@ -75,7 +103,12 @@ def find_agents_by_role(role: AgentRole):
     description="Removes a registered AI agent.",
     tags=["Agents"],
 )
-def remove_agent(agent_id: str):
+def remove_agent(
+    agent_id: str,
+    db: Session = Depends(get_db),
+):
+    agent_service = AgentService(db)
+
     removed = agent_service.remove_agent(agent_id)
 
     if not removed:
