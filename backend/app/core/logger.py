@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 
 # Create logger
 logger = logging.getLogger("novixa")
@@ -12,6 +13,8 @@ if not logger.handlers:
     console_handler.setLevel(logging.INFO)
 
     # File output
+    
+    Path("logs").mkdir(parents=True, exist_ok=True)
     file_handler = logging.FileHandler("logs/novixa.log")
     file_handler.setLevel(logging.INFO)
 
