@@ -1908,3 +1908,74 @@ ol {
         animation-iteration-count: 1 !important;
     }
 }
+/* ========================================================
+   ENGINEERING PROOF / CREDIBILITY
+   ======================================================== */
+
+.proof-section {
+    padding: 120px 0;
+}
+
+.proof-section .section-heading {
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.proof-card {
+    position: relative;
+    padding: 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--surface-color);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.proof-card:hover {
+    transform: translateY(-4px);
+}
+
+.proof-number {
+    display: block;
+    margin-bottom: 24px;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+}
+
+.proof-card h3 {
+    margin-bottom: 12px;
+}
+
+.proof-card p {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.75;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .proof-section {
+        padding: 80px 0;
+    }
+
+    .proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proof-card {
+        padding: 28px;
+    }
+
+}
+
