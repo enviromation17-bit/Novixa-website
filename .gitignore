@@ -5,3 +5,6 @@ backend/logs/
 *.pyc
 .venv/
 frontend/ts
+backend/data/
+backend/.env.backup
+
