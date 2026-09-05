@@ -22,10 +22,8 @@
        is deployed.
     */
     const ENDPOINT =
-        window.NOVIXA_CONTACT_ENDPOINT ||
-        "http://127.0.0.1:8000/api/v1/contacts";
-
-
+    window.NOVIXA_CONTACT_ENDPOINT ||
+    "https://novixa-website.onrender.com/api/v1/contacts";
     /* ========================================================
        STATUS MESSAGE
     ======================================================== */
